@@ -1,0 +1,20 @@
+Installation of ATAT:
+1. The atat folder contains the whole package. Copy the entire folder where you want.
+2. Open the folder, open the file makefile with a text editor and look for the line BINDIR=$(HOME)/bin/. Change $(HOME)/bin/ to point wherever you want to put the executables. 
+3. Type "make".
+4. Type "make install".
+
+Further information about this toolkit can be found in the file at the following url
+https://alum.mit.edu/www/avdw/atat/
+
+Cluster Counting Report from Tong.pdf:
+This document illustrates the goals of this tool, the general methodology, and some results regarding cluster counting in CHA and FER.
+
+Cluster_Counting_Demo folder:
+This folder contains an ipython notebook file, which explain input/output files and calculation procedures in detail. Going through all the cells in notebook can help to understand what the tool is able to do. Classes.py and utilities.py contain all the functions needed in this tool.
+
+CHA_example folder:
+This folder contains an ipython notebook file and several python files to show how we actually submit the jobs to super computers and show how we store the results.
+Usually, we use the ipython notebook file to generate lattice.p, structure.p, and penalty.p files. We use pickle file format here to store all the structure information. After we have lattice.p, structure.p, and penalty.p files ready, we run vec_job.py to generate job scripts for generating vectors (structures). Then we run count_job.py or titrate_job.py to count or titrate clusters in the vectors we just generated. 
+All the results are saved in pickle file format, we usually have multiple result files for one Si/Al ratio. Then we use combine.py to combine the files. So one Si/Al ratio will only have one file. Then we can analyze the data.
+
